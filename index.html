@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Todo-List</title>
+</head>
+<body>
+  <div class="container mt-4">
+    <h1 class="display-4 text-center">
+      <i class="fas fa-list-alt "></i> To-Do<span class="text-primary"></span> List</h1>
+  </div>
+
+      <div class="container">
+        <h2 class="">Add Task</h2>
+        <form id="addForm" class="form-inline mb-3">
+          <input type="text" class="form-control mr-2" id="item" placeholder="Please input your task">
+          <select class="form-control mr-2" id="select">
+            <option>Normal Task</option>
+            <option>Priority task</option>
+          </select>
+          <!-- <input type="time" class="form-control mr-2" id="timer"> -->
+          <input type="submit" class="btn btn-dark" value="Submit" >
+        </form>
+        <h2 class="title" id="error"></h2>
+      </div>
+      <div class="container">
+        <h1 class="text-center text-transform-uppercase font-weight-bold">List Of Todo-List</h1>
+        <p class="text-center font-weight-bold">Click the "X" to remove the item list</p>
+       <div id="main" class="card card-body">
+        <h1 class="title text-center">Normal Task</h1>
+        <ul id="items" class="list-group">
+          
+        </ul>
+  
+       </div>
+      </div>
+
+      <div class="container mt-3">
+        <div id="main" class="card card-body">
+        <h1 class="title text-center mt-3">Priority Task</h1>
+        <ul id="prio-items" class="list-group">
+          
+        </ul>
+      </div>
+
+      <div id="data-here">
+
+      </div>
+<script src="js/final.js"></script>
+</body>
+</html>
