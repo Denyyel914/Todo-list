@@ -18,8 +18,7 @@ formInput.addEventListener('submit', submitItem);
 function submitItem(e) {
   e.preventDefault();
   if(formValue.value == '') {
-    error.innerHTML = "Please put valid inputs";
-    error.style.color = "red";
+    alertShow('Please input valid fields', 'alert alert-danger');
     setTimeout(() => error.remove(), 3000);
   } else {
     if(select.value == 'Priority task') {
@@ -55,6 +54,14 @@ function submitItem(e) {
 }
 
 itemList.addEventListener('click', deleteItem);
+itemList.addEventListener('click', checkTask);
+
+function checkTask(e) {
+  if(e.target.classList.contains('list-group-item')) {
+      e.target.style.backgroundColor = "#dff0d8";
+      e.target.style.textDecoration = "line-through";
+  }
+}
 
 function deleteItem(e) {
 
@@ -66,5 +73,13 @@ function deleteItem(e) {
    }
  }
 }
+
+function alertShow(message, className) {
+  error.className = className;
+  error.appendChild(document.createTextNode(message));
+  // setTimeout(() => document.querySelector('.alert').remove(), 3000);
+}
+
+
 
 
