@@ -21,36 +21,58 @@ function submitItem(e) {
     alertShow('Please input valid fields', 'alert alert-danger');
     setTimeout(() => error.remove(), 3000);
   } else {
-    if(select.value == 'Priority task') {
-      const btnCreate = document.createElement('button');
-      btnCreate.className = 'btn btn-danger btn-sm float-right delete';
-      const btnValue = document.createTextNode('X');
-      btnCreate.appendChild(btnValue);
-      // console.log(btnCreate);
-      // console.log(formValue);
-      const li = document.createElement('li');
-      li.className = 'list-group-item';
-      const liValue = document.createTextNode(formValue.value);
-      li.appendChild(liValue);
-      li.appendChild(btnCreate);
-      prioItems.appendChild(li);
-      formValue.value = '';
-    } else {
-      const btnCreate = document.createElement('button');
-      btnCreate.className = 'btn btn-danger btn-sm float-right delete';
-      const btnValue = document.createTextNode('X');
-      btnCreate.appendChild(btnValue);
-      // console.log(btnCreate);
-      // console.log(formValue);
-      const li = document.createElement('li');
-      li.className = 'list-group-item';
-      const liValue = document.createTextNode(formValue.value);
-      li.appendChild(liValue);
-      li.appendChild(btnCreate);
-      itemList.appendChild(li);
-      formValue.value = '';
-    }
+    addField();
   }
+}
+
+function addField(li) {
+  if(select.value == 'Priority task') {
+    const btnCreate = document.createElement('button');
+    btnCreate.className = 'btn btn-danger btn-sm float-right delete';
+    const btnValue = document.createTextNode('X');
+    btnCreate.appendChild(btnValue);
+    // console.log(btnCreate);
+    // console.log(formValue);
+    const li = document.createElement('li');
+    li.className = 'list-group-item';
+    const liValue = document.createTextNode(formValue.value);
+    li.appendChild(liValue);
+    li.appendChild(btnCreate);
+    prioItems.appendChild(li);
+    deleteFields();
+  } else {
+    const btnCreate = document.createElement('button');
+    btnCreate.className = 'btn btn-danger btn-sm float-right delete';
+    const btnValue = document.createTextNode('X');
+    btnCreate.appendChild(btnValue);
+    // console.log(btnCreate);
+    // console.log(formValue);
+    const li = document.createElement('li');
+    li.className = 'list-group-item';
+    const liValue = document.createTextNode(formValue.value);
+    li.appendChild(liValue);
+    li.appendChild(btnCreate);
+    itemList.appendChild(li);
+    deleteFields();
+  }
+}
+
+// function createElement() {
+//   const btnCreate = document.createElement('button');
+//   btnCreate.className = 'btn btn-danger btn-sm float-right delete';
+//   const btnValue = document.createTextNode('X');
+//   btnCreate.appendChild(btnValue);
+//   // console.log(btnCreate);
+//   // console.log(formValue);
+//   const li = document.createElement('li');
+//   li.className = 'list-group-item';
+//   const liValue = document.createTextNode(formValue.value);
+//   li.appendChild(liValue);
+//   li.appendChild(btnCreate); 
+// }
+
+function deleteFields() {
+  formValue.value = '';
 }
 
 itemList.addEventListener('click', deleteItem);
@@ -77,7 +99,7 @@ function deleteItem(e) {
 function alertShow(message, className) {
   error.className = className;
   error.appendChild(document.createTextNode(message));
-  // setTimeout(() => document.querySelector('.alert').remove(), 3000);
+  setTimeout(() => document.querySelector('.alert').remove(), 3000);
 }
 
 
