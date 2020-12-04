@@ -8,10 +8,6 @@ const error = document.querySelector('#error');
 const select = document.querySelector('#select');
 
 
-
-
-  
-
 formInput.addEventListener('submit', submitItem);
 
 
@@ -19,9 +15,10 @@ function submitItem(e) {
   e.preventDefault();
   if(formValue.value == '') {
     alertShow('Please input valid fields', 'alert alert-danger');
-    setTimeout(() => error.remove(), 3000);
   } else {
     addField();
+    deleteFields();
+    alertShow('Task Created', 'alert alert-success');
   }
 }
 
@@ -33,7 +30,6 @@ function addField() {
     itemList.appendChild(createElement());
   }
 }
-
 
 
 function createElement() {
