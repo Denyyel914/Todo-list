@@ -25,51 +25,29 @@ function submitItem(e) {
   }
 }
 
-function addField(li) {
+
+function addField() {
   if(select.value == 'Priority task') {
-    const btnCreate = document.createElement('button');
-    btnCreate.className = 'btn btn-danger btn-sm float-right delete';
-    const btnValue = document.createTextNode('X');
-    btnCreate.appendChild(btnValue);
-    // console.log(btnCreate);
-    // console.log(formValue);
-    const li = document.createElement('li');
-    li.className = 'list-group-item';
-    const liValue = document.createTextNode(formValue.value);
-    li.appendChild(liValue);
-    li.appendChild(btnCreate);
-    prioItems.appendChild(li);
-    deleteFields();
+    prioItems.appendChild(createElement());
   } else {
-    const btnCreate = document.createElement('button');
-    btnCreate.className = 'btn btn-danger btn-sm float-right delete';
-    const btnValue = document.createTextNode('X');
-    btnCreate.appendChild(btnValue);
-    // console.log(btnCreate);
-    // console.log(formValue);
-    const li = document.createElement('li');
-    li.className = 'list-group-item';
-    const liValue = document.createTextNode(formValue.value);
-    li.appendChild(liValue);
-    li.appendChild(btnCreate);
-    itemList.appendChild(li);
-    deleteFields();
+    itemList.appendChild(createElement());
   }
 }
 
-// function createElement() {
-//   const btnCreate = document.createElement('button');
-//   btnCreate.className = 'btn btn-danger btn-sm float-right delete';
-//   const btnValue = document.createTextNode('X');
-//   btnCreate.appendChild(btnValue);
-//   // console.log(btnCreate);
-//   // console.log(formValue);
-//   const li = document.createElement('li');
-//   li.className = 'list-group-item';
-//   const liValue = document.createTextNode(formValue.value);
-//   li.appendChild(liValue);
-//   li.appendChild(btnCreate); 
-// }
+
+
+function createElement() {
+  const btnCreate = document.createElement('button');
+  btnCreate.className = 'btn btn-danger btn-sm float-right delete';
+  const btnValue = document.createTextNode('X');
+  btnCreate.appendChild(btnValue);
+  const li = document.createElement('li');
+  li.className = 'list-group-item';
+  const liValue = document.createTextNode(formValue.value);
+  li.appendChild(liValue);
+  li.appendChild(btnCreate);
+  return li;
+}
 
 function deleteFields() {
   formValue.value = '';
